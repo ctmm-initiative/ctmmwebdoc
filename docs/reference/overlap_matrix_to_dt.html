@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Parallel apply function to list in all platforms — par_lapply • ctmmweb</title>
+<title>Convert overlap result matrix to data.table — overlap_matrix_to_dt • ctmmweb</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,69 +95,32 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Parallel apply function to list in all platforms</h1>
+    <h1>Convert overlap result matrix to data.table</h1>
     </div>
 
     
-    <p>This is a generic parallel lapply that work across all major platforms.</p>
+    <p>Convert overlap result matrix to data.table</p>
     
 
-    <pre class="usage"><span class='fu'>par_lapply</span>(<span class='no'>lst</span>, <span class='no'>fun</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>parallel</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>win_init</span> <span class='kw'>=</span> <span class='fu'>expression</span>({     <span class='fu'>requireNamespace</span>(<span class='st'>"ctmm"</span>, <span class='kw'>quietly</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) }))</pre>
+    <pre class="usage"><span class='fu'>overlap_matrix_to_dt</span>(<span class='no'>mat_3d</span>, <span class='kw'>clear_half</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lst</th>
-      <td><p>Input list.</p></td>
+      <th>mat_3d</th>
+      <td><p>the 3d matrix result from <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/overlap'>ctmm::overlap</a></code></p></td>
     </tr>
     <tr>
-      <th>fun</th>
-      <td><p>Function to be applied on <code>lst</code>. Note only single parameter
-function is accepted, otherwise it's difficult to determine how to assign
-input parameters to each list item and worker. You need to convert multiple
-parameter function into a function take single list parameter, and assign
-parameters in that list accordingly. <code><a href='align_list.html'>align_list()</a></code> is a helper function to
-align two lists.</p></td>
-    </tr>
-    <tr>
-      <th>cores</th>
-      <td><p>the core count to be used for cluster. Could be a positive
-integer or</p><ul>
-<li><p>Default <code>NULL</code> value will indicate to use a heuristic value based on detected cores, which is roughly <code>min(input_size, physical_cores_count * n)</code>,
-<code>n</code> being 2 for windows, 4 for Mac/Linux. See <code><a href='http://www.rdocumentation.org/packages/parallel/topics/detectCores'>?parallel::detectCores</a></code> for
-more information on physical/logical cores in different platforms.</p></li>
-<li><p>A negative value like <code>-2</code> will use <code>all available cores - 2</code>, so that 2
-cores are reserved for user's other tasks.</p></li>
-</ul></td>
-    </tr>
-    <tr>
-      <th>parallel</th>
-      <td><p>Use regular <code>lapply</code> when FALSE. You may notice more console
-messages in this mode because the console messages in parallel mode are
-lost by default as they happened in other threads.</p></td>
-    </tr>
-    <tr>
-      <th>win_init</th>
-      <td><p>Expression to be initialized in Windows. Since all parameters
-should be included in the input list already, this usually means library
-calls, like <code>{library(ctmm)}</code> for ctmm related operations, which has been
-taken care of with the default value. Note <code>requireNamespace</code> is used
-because that's more appropriate inside a package.</p></td>
+      <th>clear_half</th>
+      <td><p>whether to clear the lower triangular part, including the
+diagonal</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>List of applied results</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>In Windows <code><a href='http://www.rdocumentation.org/packages/parallel/topics/clusterApply'>parallel::parLapplyLB</a></code> is used, which is a socket cluster and
-need to initialize each session manually with <code>win_init</code> if needed. In
-Linux/Mac <code><a href='http://www.rdocumentation.org/packages/parallel/topics/mclapply'>parallel::mclapply</a></code> is used, where each worker will inherit the
-current environment through forking, so no additional setup is required.</p>
+    <p>a <code>data.table</code> of overlap results</p>
     
 
   </div>
@@ -167,8 +130,6 @@ current environment through forking, so no additional setup is required.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

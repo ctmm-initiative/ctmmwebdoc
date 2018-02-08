@@ -103,7 +103,7 @@
 <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/ctmm.fit'>ctmm::ctmm.fit</a></code> on each object of list on parallel.</p>
     
 
-    <pre class="usage"><span class='fu'>par_fit_models</span>(<span class='no'>tele_list</span>, <span class='kw'>reserved_cores</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>parallel</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>par_fit_models</span>(<span class='no'>tele_list</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>parallel</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -113,15 +113,21 @@
       <td><p>telemetry list</p></td>
     </tr>
     <tr>
-      <th>reserved_cores</th>
-      <td><p>reserve some cores so that not all cores are used.
-Check your platform's core count with
-<code><a href='http://www.rdocumentation.org/packages/parallel/topics/detectCores'>parallel::detectCores(logical = FALSE)</a></code>. <code><a href='http://www.rdocumentation.org/packages/parallel/topics/detectCores'>?parallel::detectCores</a></code>
-has more details about physical/logical cores in different platforms.</p></td>
+      <th>cores</th>
+      <td><p>the core count to be used for cluster. Could be a positive
+integer or</p><ul>
+<li><p>Default <code>NULL</code> value will indicate to use a heuristic value based on detected cores, which is roughly <code>min(input_size, physical_cores_count * n)</code>,
+<code>n</code> being 2 for windows, 4 for Mac/Linux. See <code><a href='http://www.rdocumentation.org/packages/parallel/topics/detectCores'>?parallel::detectCores</a></code> for
+more information on physical/logical cores in different platforms.</p></li>
+<li><p>A negative value like <code>-2</code> will use <code>all available cores - 2</code>, so that 2
+cores are reserved for user's other tasks.</p></li>
+</ul></td>
     </tr>
     <tr>
       <th>parallel</th>
-      <td><p>Use regular <code>lapply</code> when FALSE</p></td>
+      <td><p>Use regular <code>lapply</code> when FALSE. You may notice more console
+messages in this mode because the console messages in parallel mode are
+lost by default as they happened in other threads.</p></td>
     </tr>
     </table>
     
