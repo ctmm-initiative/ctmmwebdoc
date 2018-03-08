@@ -99,7 +99,9 @@
     </div>
 
     
-    <p>Start ctmm web app</p>
+    <p>The app is started with system default browser, while usually Shiny app is
+launched with RStudio builtin browser. The builtin browser has some
+compatibility problems so Chrome is recommended.</p>
     
 
     <pre class="usage"><span class='fu'>app</span>(<span class='kw'>shiny_app_data</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -109,11 +111,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>Data to be loaded with app. It could be anything can be taken by <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry</a></code>:</p><ul>
-<li><p>Path to MoveBank csv file</p></li>
-<li><p>MoveBank <code>data.frame</code> object</p></li>
-<li><p><code>Move</code> object</p></li>
-<li><p><code>ctmm</code> `telemetry`` object/list.</p></li>
+      <td><p>Data to be loaded with app. It could be anything can be taken by <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code>:</p><ul>
+<li><p>csv file Path of <a href='https://www.movebank.org/node/13'>MoveBank format</a></p></li>
+<li><p><code>data.frame</code> of <a href='https://www.movebank.org/node/13'>MoveBank format</a></p></li>
+<li><p><a href='http://www.rdocumentation.org/packages/move/topics/Move-class'>move::Move</a> object</p></li>
+<li><p><code><a href='http://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> telemetry object/list.</p></li>
 <li><p>Default <code>NULL</code> will not load any data.</p></li>
 </ul></td>
     </tr>

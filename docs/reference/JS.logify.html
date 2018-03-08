@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JS Function To Logify A <code>sliderInput</code> — JS.logify • ctmmweb</title>
+<title>JS Functions To Logify A <code>sliderInput</code> — JS.logify • ctmmweb</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,16 +95,20 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>JS Function To Logify A <code>sliderInput</code></h1>
+    <h1>JS Functions To Logify A <code>sliderInput</code></h1>
     </div>
 
     
-    <p>Make Shiny <code>sliderInput</code> <a href='https://stackoverflow.com/a/39028280/3718827'>support logarithmicscale</a>. <code>JS.logify</code> create a
-Javascript function in string, and <a href='JS.onload.html'>JS.onload</a> register the function to
-<code>sliderInput</code>. Search the usage in <code>/inst/app/ui.R</code> for examples.</p>
+    <p>Make Shiny <code>sliderInput</code> support
+<a href='https://stackoverflow.com/a/39028280/3718827'>logarithmic scale</a>.
+<code>JS.logify</code> create a Javascript function in string, and <code>JS.onload</code> register
+the functions to <code>sliderInput</code>. Search the usage in <code>/inst/app/ui.R</code> for
+examples.</p>
     
 
-    <pre class="usage"><span class='fu'>JS.logify</span>(<span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</pre>
+    <pre class="usage"><span class='fu'>JS.logify</span>(<span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+
+<span class='fu'>JS.onload</span>(<span class='no'>slider_id_vec</span>, <span class='kw'>sci</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -113,11 +117,29 @@ Javascript function in string, and <a href='JS.onload.html'>JS.onload</a> regist
       <th>digits</th>
       <td><p>digits after numerical point</p></td>
     </tr>
+    <tr>
+      <th>slider_id_vec</th>
+      <td><p>vector of slider ids. Multiple functions for multiple
+<code>sliderInput</code> can be registered at once.</p></td>
+    </tr>
+    <tr>
+      <th>sci</th>
+      <td><p>use scientific notation</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>JS code</p>
+    <p>JS code in string to logify <code>sliderInput</code></p>
+<p>JS code in string to register the JS logify functions</p>
+    
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>JS.logify</code>: JS Function To Logify A <code>sliderInput</code></p></li>
+<li><p><code>JS.onload</code>: JS code in string to register JS logify functions for
+each <code>sliderInput</code></p></li>
+</ul>
     
 
   </div>
@@ -127,6 +149,8 @@ Javascript function in string, and <a href='JS.onload.html'>JS.onload</a> regist
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#functions">Functions</a></li>
           </ul>
 
   </div>

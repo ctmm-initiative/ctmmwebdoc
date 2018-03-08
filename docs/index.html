@@ -78,11 +78,14 @@
 <a href="#introduction" class="anchor"></a>Introduction</h2>
 <p>This is a web app package for analyzing animal tracking data as a continuous-time stochastic processes.</p>
 <p>It’s a shiny app built upon <a href="https://github.com/ctmm-initiative/ctmm">ctmm R package</a>. This is also a R package so you can reuse some functionalities in your own R analysis.</p>
+<p>Suggested citation for the app/package:</p>
+<pre><code>Dong, X., C.H. Fleming, and J.M. Calabrese. 2018. ctmmweb: A Shiny web app for the ctmm movement analysis package.
+https://github.com/ctmm-initiative/ctmmweb</code></pre>
 <ul>
-<li>Check <a href="https://ctmm-initiative.github.io/ctmmwebdoc/articles/demo.html">the videos here</a> for feature demonstrations.</li>
+<li>Check <a href="https://ctmm-initiative.github.io/ctmmwebdoc/articles/demo.html">the videos</a> for feature demonstrations.</li>
 <li>The <code>help</code> buttons in each page also have detailed documentations for the specific feature.</li>
 <li>
-<a href="https://ctmm-initiative.github.io/ctmmwebdoc/">The package reference website</a> provided some installation tips and documentations for package functions.</li>
+<a href="https://ctmm-initiative.github.io/ctmmwebdoc/">The package reference website</a> provided some tips on installation and documentations for package functions.</li>
 <li><a href="https://ctmm-initiative.github.io/ctmmwebdoc/news/index.html">Release History</a></li>
 </ul>
 </div>
@@ -100,8 +103,14 @@
 </li>
 <li>
 <p>Start R or RStudio, run these in console to install dependency packages. Sometimes you may need to restart R in the process.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">"devtools"</span>)) <span class="kw">install.packages</span>(<span class="st">"devtools"</span>)
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"ctmm-initiative/ctmmweb"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">"remotes"</span>)) <span class="kw">install.packages</span>(<span class="st">"remotes"</span>)
+remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"ctmm-initiative/ctmmweb"</span>)</code></pre></div>
+<p>Alternatively, you can install through <a href="https://github.com/eddelbuettel/drat">drat</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">"drat"</span>)) <span class="kw">install.packages</span>(<span class="st">"drat"</span>)
+ctmm_repo &lt;-<span class="st"> "https://ctmm-initiative.github.io/ctmm_repo/"</span>
+drat<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/drat/topics/addRepo">addRepo</a></span>(<span class="st">"ctmm-initiative"</span>, ctmm_repo)
+<span class="co"># ctmm source version in ctmm_repo should be installed</span>
+<span class="kw">install.packages</span>(<span class="st">"ctmmweb"</span>)</code></pre></div>
 </li>
 <li>
 <p>Run the app in one of following methods:</p>
@@ -114,7 +123,7 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <span class="kw">library</span>(ctmm)
 <span class="kw">data</span>(buffalo)
 <span class="kw"><a href="reference/app.html">app</a></span>(buffalo)</code></pre></div>
-<p>This will start the app locally with RStudio’s embeded browser. In windows/Linux this has known compatibility problems. You can click the <code>open in browser</code> button in the browser top bar to use system browser instead. Chrome is recommended.</p>
+<p>This will launch the app locally with system default browser. Chrome is recommended for compatibility reasons. You can copy the url into Chrome if it was not launched by Chrome. After the browser windows was closed, you may need to stop the R session in R console manually (<code>Esc</code> or <code>Ctrl+C</code>) to quit the app.</p>
 </li>
 </ol>
 <p>More details about installation and compatibility problems can be <a href="https://ctmm-initiative.github.io/ctmmwebdoc/articles/installation.html">found here.</a></p>

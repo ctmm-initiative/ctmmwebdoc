@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Parallel selecting models on telemetry list — par_try_models • ctmmweb</title>
+<title>Parallel fitting models on telemetry list — par_try_models • ctmmweb</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,30 +95,30 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Parallel selecting models on telemetry list</h1>
+    <h1>Parallel fitting models on telemetry list</h1>
     </div>
 
     
-    <p><code><a href='http://www.rdocumentation.org/packages/ctmm/topics/ctmm.fit'>ctmm::ctmm.select</a></code> fit multiple models on telemetry object and output list
-of all attempted models. This function run <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/ctmm.fit'>ctmm::ctmm.select</a></code> on each object
-of list on parallel.</p>
+    <p>Parallel fitting models on telemetry list</p>
     
 
-    <pre class="usage"><span class='fu'>par_try_models</span>(<span class='no'>tele_list</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>parallel</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>par_try_models</span>(<span class='no'>tele_list</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>parallel</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='fu'>par_fit_models</span>(<span class='no'>tele_list</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>parallel</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>tele_list</th>
-      <td><p>telemetry list</p></td>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> telemetry list</p></td>
     </tr>
     <tr>
       <th>cores</th>
       <td><p>the core count to be used for cluster. Could be a positive
 integer or</p><ul>
 <li><p>Default <code>NULL</code> value will indicate to use a heuristic value based on detected cores, which is roughly <code>min(input_size, physical_cores_count * n)</code>,
-<code>n</code> being 2 for windows, 4 for Mac/Linux. See <code><a href='http://www.rdocumentation.org/packages/parallel/topics/detectCores'>?parallel::detectCores</a></code> for
+<code>n</code> being 2 for windows, 4 for Mac/Linux. See <code><a href='http://www.rdocumentation.org/packages/parallel/topics/detectCores'>parallel::detectCores()</a></code> for
 more information on physical/logical cores in different platforms.</p></li>
 <li><p>A negative value like <code>-2</code> will use <code>all available cores - 2</code>, so that 2
 cores are reserved for user's other tasks.</p></li>
@@ -126,7 +126,7 @@ cores are reserved for user's other tasks.</p></li>
     </tr>
     <tr>
       <th>parallel</th>
-      <td><p>Use regular <code>lapply</code> when FALSE. You may notice more console
+      <td><p>Use regular <code>lapply()</code> when FALSE. You may notice more console
 messages in this mode because the console messages in parallel mode are
 lost by default as they happened in other threads.</p></td>
     </tr>
@@ -134,8 +134,19 @@ lost by default as they happened in other threads.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of items named by animal names, each item hold the attempted
-models as sub items with model type as name</p>
+    <p><code>par_try_models</code>: list of items named by animal names, each item hold
+the attempted models as sub items with model type as name.
+
+<code>par_fit_models</code>: list of models named by animal names.</p>
+    
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>par_try_models</code>: Run <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/ctmm.fit'>ctmm::ctmm.select()</a></code> on each object of list
+on parallel.</p></li>
+<li><p><code>par_fit_models</code>: Run <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/ctmm.fit'>ctmm::ctmm.fit()</a></code> on each object of list on
+parallel.</p></li>
+</ul>
     
 
   </div>
@@ -145,6 +156,8 @@ models as sub items with model type as name</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#functions">Functions</a></li>
           </ul>
 
   </div>

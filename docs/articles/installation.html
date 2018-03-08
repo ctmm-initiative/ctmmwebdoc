@@ -76,7 +76,7 @@
       <h1>Installation</h1>
                         <h4 class="author">Xianghui Dong</h4>
             
-            <h4 class="date">2018-02-08</h4>
+            <h4 class="date">2018-03-07</h4>
           </div>
 
     
@@ -85,7 +85,13 @@
 <div id="package-installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#package-installation" class="anchor"></a>Package installation</h2>
-<p>Sometimes you need to restart R session in the process of install/upgrade lots of packages. Just restart R session and run the installation code again.</p>
+<p>If you met errors in install/upgrade lots of packages, restart R session and install again often can solve the problem.</p>
+<p>If some dependency packages were installed before by <code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">devtools::install_github</a></code>, <code>devtools</code> will always install the github source version even <code>ctmmweb</code> only need the CRAN binary version. Sometimes the source version need compilation which is time consuming or even can cause installation failures. Try to remove these package first so that only CRAN version will be installed.</p>
+<div id="windows" class="section level3">
+<h3 class="hasAnchor">
+<a href="#windows" class="anchor"></a>Windows</h3>
+<p>Some packages need to be built from source, and you need to install RTools in windows. Just follow the instructions when prompted.</p>
+</div>
 <div id="linux" class="section level3">
 <h3 class="hasAnchor">
 <a href="#linux" class="anchor"></a>Linux</h3>
@@ -109,10 +115,16 @@ sudo apt-get install libssl-dev</code></pre>
 <h2 class="hasAnchor">
 <a href="#known-limitations" class="anchor"></a>Known limitations</h2>
 <ul>
-<li>When you start the app in RStudio, it was opened with embeded browser in RStudio, which has these known limitations:</li>
-<li>Windows: log scale slider not shown properly; download dialog don’t prompt proper file name by default.</li>
-<li>Mac: download file will open a blank page, and the dowload function was executed twice so there will be two entries in report.</li>
-<li>Linux: download dialog do not respond.</li>
+<li>The app is started with system browser, while usually Shiny app is launched with RStudio builtin browser. The builtin browser has these known limitations:
+<ul>
+<li>
+<code>Windows</code>: log scale slider not shown properly; download dialog don’t prompt proper file name by default.</li>
+<li>
+<code>Mac</code>: download file will open a blank page, and the dowload function was executed twice so there will be two entries in report.</li>
+<li>
+<code>Linux</code>: download dialog do not respond. Firefox is also known to have some limitations.</li>
+</ul>
+</li>
 <li>
 <p>There is a <a href="https://github.com/Rdatatable/data.table/issues/2137">known bug</a> caused by <code>data.table</code>, <code>openMP</code> and <code>mcapply</code> in R 3.4. So it’s possible to see this error when fitting models in parallel under Mac/Linux:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Assertion failure at <span class="kw">kmp_runtime.cpp</span>(<span class="dv">6480</span>)<span class="op">:</span><span class="st"> </span>__kmp_thread_pool <span class="op">==</span><span class="st"> </span>__null.
@@ -121,6 +133,7 @@ OMP<span class="op">:</span><span class="st"> </span>Error <span class="co">#13:
 </ul>
 <p>The error is pretty random and hard to reproduce, but usually you can restart R session and it should dissappear.</p>
 <p>It’s also possible to meet mysterious bugs with parallel operations in a long session. Restart R usually can solve the problem.</p>
+<p>You can also disable the parallel mode in first box of <code>Import</code> page.</p>
 </div>
 </div>
   </div>

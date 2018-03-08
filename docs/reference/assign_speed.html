@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Register JS logify function for each <code>sliderInput</code> — JS.onload • ctmmweb</title>
+<title>Calculate speed for each animal location — assign_speed • ctmmweb</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -95,33 +95,48 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Register JS logify function for each <code>sliderInput</code></h1>
+    <h1>Calculate speed for each animal location</h1>
     </div>
 
     
-    <p>Make Shiny <code>sliderInput</code> <a href='https://stackoverflow.com/a/39028280/3718827'>support logarithmicscale</a>. <code>JS.logify</code> create a
-Javascript function in string, and JS.onload register the function to
-<code>sliderInput</code>. Search the usage in <code>/inst/app/ui.R</code> for examples.</p>
+    <p>It's difficult to get a simple speed definition yet robust to all kinds of
+dirty data cases. A sophisticated method is attempt first which should cover
+most common edge cases reasonably well. When it fails for extreme situations,
+the function will fall back to simpler method which is more naive but robust.</p>
     
 
-    <pre class="usage"><span class='fu'>JS.onload</span>(<span class='no'>slider_id_vec</span>, <span class='kw'>sci</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>assign_speed</span>(<span class='no'>animals_dt</span>, <span class='no'>tele_list</span>, <span class='kw'>device_error</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>slider_id_vec</th>
-      <td><p>slider id vector</p></td>
+      <th>animals_dt</th>
+      <td><p>location <code>data.table</code> from <code><a href='combine.html'>combine()</a></code>. The original input
+<code>data.table</code> will be modified in place by reference after calculation.</p></td>
     </tr>
     <tr>
-      <th>sci</th>
-      <td><p>use scientific notation</p></td>
+      <th>tele_list</th>
+      <td><p>the <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> telemetry obj list. Calculation
+need error information from it.</p></td>
+    </tr>
+    <tr>
+      <th>device_error</th>
+      <td><p>standardized device error in meter. Example: GPS: 10,
+VHF: 100</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>JS code</p>
+    <p>The input <code>data.table</code> with speed columns added. The name <code>assign</code>
+hint on this nature.</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>To reduce duplicate calculation, speed calculation will use some columns
+created in distance calculation. Always update <code>data.table</code> with
+<code><a href='assign_distance.html'>assign_distance()</a></code> first then use <code>assign_speed()</code>.</p>
     
 
   </div>
@@ -131,6 +146,8 @@ Javascript function in string, and JS.onload register the function to
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

@@ -99,12 +99,12 @@
     </div>
 
     
-    <p>A Telemetry list hold mutiple animal data in separate list items, each item
-have the animal location data in a data frame, and other information in
-various slots. This structure supports flexible S3 methods for telemetry
-object. However to plot multiple animals location together with <code>ggplot2</code> we
-need to combine all location data into a single <code>data.frame</code> with an animal id
-column.</p>
+    <p>A <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> telemetry list hold mutiple animal data in separate
+list items, each item have the animal location data in a data frame, and
+other information in various slots. This structure supports flexible S3
+methods for telemetry object. However to plot multiple animals location
+together with <code>ggplot2</code> we need to combine all location data into a single
+<code>data.frame</code> with an animal id column.</p>
     
 
     <pre class="usage"><span class='fu'>combine</span>(<span class='no'>tele_obj_list</span>)</pre>
@@ -114,17 +114,14 @@ column.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>tele_obj_list</th>
-      <td><p>telemetry object/list</p></td>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> telemetry object/list</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list of</p><ul>
-<li><p><code>data_dt</code>: all animals combined in one data.table</p></li>
-<li><p><code>info</code>: animal information table</p></li>
-</ul>
-
+    <p>list of - <code>data_dt</code>: all animals combined in one data.table - <code>info</code>:
+animal information table</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 

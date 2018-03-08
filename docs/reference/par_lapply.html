@@ -126,7 +126,7 @@ align two lists.</p></td>
       <td><p>the core count to be used for cluster. Could be a positive
 integer or</p><ul>
 <li><p>Default <code>NULL</code> value will indicate to use a heuristic value based on detected cores, which is roughly <code>min(input_size, physical_cores_count * n)</code>,
-<code>n</code> being 2 for windows, 4 for Mac/Linux. See <code><a href='http://www.rdocumentation.org/packages/parallel/topics/detectCores'>?parallel::detectCores</a></code> for
+<code>n</code> being 2 for windows, 4 for Mac/Linux. See <code><a href='http://www.rdocumentation.org/packages/parallel/topics/detectCores'>parallel::detectCores()</a></code> for
 more information on physical/logical cores in different platforms.</p></li>
 <li><p>A negative value like <code>-2</code> will use <code>all available cores - 2</code>, so that 2
 cores are reserved for user's other tasks.</p></li>
@@ -134,7 +134,7 @@ cores are reserved for user's other tasks.</p></li>
     </tr>
     <tr>
       <th>parallel</th>
-      <td><p>Use regular <code>lapply</code> when FALSE. You may notice more console
+      <td><p>Use regular <code>lapply()</code> when FALSE. You may notice more console
 messages in this mode because the console messages in parallel mode are
 lost by default as they happened in other threads.</p></td>
     </tr>
@@ -143,7 +143,7 @@ lost by default as they happened in other threads.</p></td>
       <td><p>Expression to be initialized in Windows. Since all parameters
 should be included in the input list already, this usually means library
 calls, like <code>{library(ctmm)}</code> for ctmm related operations, which has been
-taken care of with the default value. Note <code>requireNamespace</code> is used
+taken care of with the default value. Note <code>requireNamespace()</code> is used
 because that's more appropriate inside a package.</p></td>
     </tr>
     </table>
@@ -154,9 +154,9 @@ because that's more appropriate inside a package.</p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>In Windows <code><a href='http://www.rdocumentation.org/packages/parallel/topics/clusterApply'>parallel::parLapplyLB</a></code> is used, which is a socket cluster and
+    <p>In Windows <code><a href='http://www.rdocumentation.org/packages/parallel/topics/clusterApply'>parallel::parLapplyLB()</a></code> is used, which is a socket cluster and
 need to initialize each session manually with <code>win_init</code> if needed. In
-Linux/Mac <code><a href='http://www.rdocumentation.org/packages/parallel/topics/mclapply'>parallel::mclapply</a></code> is used, where each worker will inherit the
+Linux/Mac <code><a href='http://www.rdocumentation.org/packages/parallel/topics/mclapply'>parallel::mclapply()</a></code> is used, where each worker will inherit the
 current environment through forking, so no additional setup is required.</p>
     
 
