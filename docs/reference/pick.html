@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,12 @@
 <script src="../pkgdown.js"></script>
   <link href="../extra.css" rel="stylesheet">
   
+<meta property="og:title" content="Pick subset from telemetry object/list — pick" />
+
+<meta property="og:description" content="A dataset subset can have models fitted much quicker. This is used to reduce
+waiting time in developing code that involved time consuming modeling
+processes. After code is tested and stablized, full size dataset can be used." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -96,6 +104,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Pick subset from telemetry object/list</h1>
+    
     </div>
 
     
@@ -131,9 +140,8 @@ processes. After code is tested and stablized, full size dataset can be used.</p
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>pick.telemetry</code>: telemetry object with m data points
-
-<code>pick.list</code>: telemetry list of subsets</p>
+    <p><code>pick.telemetry</code>: telemetry object with m data points</p>
+<p><code>pick.list</code>: telemetry list of subsets</p>
     
     <h2 class="hasAnchor" id="methods-by-class-"><a class="anchor" href="#methods-by-class-"></a>Methods (by class)</h2>
 
@@ -164,7 +172,7 @@ in list</p></li>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
@@ -172,3 +180,4 @@ in list</p></li>
 
   </body>
 </html>
+

@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,7 @@
 <script src="../pkgdown.js"></script>
   <link href="../extra.css" rel="stylesheet">
   
+<meta property="og:title" content="Function reference" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -119,7 +122,7 @@
         <tr>
           <!--  -->
           <td>
-            <p><code><a href="app.html">app</a></code> </p>
+            <p><code><a href="app.html">app()</a></code> </p>
           </td>
           <td><p>Start ctmm web app</p></td>
         </tr>
@@ -133,13 +136,13 @@
         <tr>
           <!--  -->
           <td>
-            <p><code><a href="report.html">report</a></code> </p>
+            <p><code><a href="report.html">report()</a></code> </p>
           </td>
           <td><p>Report data summary on telemetry object/list</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="combine.html">combine</a></code> </p>
+            <p><code><a href="combine.html">combine()</a></code> </p>
           </td>
           <td><p>Generate combined location and info <code>data.table</code> from telemetry object/list</p></td>
         </tr>
@@ -159,19 +162,19 @@
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="plot_loc.html">plot_loc</a></code> </p>
+            <p><code><a href="plot_loc.html">plot_loc()</a></code> </p>
           </td>
           <td><p>Plot animal locations subset with all as background</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="plot_loc_facet.html">plot_loc_facet</a></code> </p>
+            <p><code><a href="plot_loc_facet.html">plot_loc_facet()</a></code> </p>
           </td>
           <td><p>Plot animal locations in facet</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="plot_time.html">plot_time</a></code> </p>
+            <p><code><a href="plot_time.html">plot_time()</a></code> </p>
           </td>
           <td><p>Plot animal sampling time histogram in facet</p></td>
         </tr>
@@ -185,31 +188,31 @@
         <tr>
           <!--  -->
           <td>
-            <p><code><a href="summary_tried_models.html">summary_tried_models</a></code> </p>
+            <p><code><a href="summary_tried_models.html">summary_tried_models()</a></code> </p>
           </td>
           <td><p>Generate formated model summary table from tried models results</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="flatten_models.html">flatten_models</a></code> </p>
+            <p><code><a href="flatten_models.html">flatten_models()</a></code> </p>
           </td>
-          <td><p>Convert nested <code><a href='reference/par_try_models.html'>par_fit_models()</a></code> result into flatten list with model names</p></td>
+          <td><p>Flatten model list</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="overlap_matrix_to_dt.html">overlap_matrix_to_dt</a></code> </p>
+            <p><code><a href="overlap_matrix_to_dt.html">overlap_matrix_to_dt()</a></code> </p>
           </td>
           <td><p>Convert overlap result matrix to data.table</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="plot_vario.html">plot_vario</a></code> </p>
+            <p><code><a href="plot_vario.html">plot_vario()</a></code> </p>
           </td>
           <td><p>Plot a group of empirical or modeled variograms.</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="plot_ud.html">plot_ud</a></code> </p>
+            <p><code><a href="plot_ud.html">plot_ud()</a></code> </p>
           </td>
           <td><p>Plot a group of home ranges or occurrences</p></td>
         </tr>
@@ -223,19 +226,19 @@
         <tr>
           <!--  -->
           <td>
-            <p><code><a href="base_map.html">base_map</a></code> </p>
+            <p><code><a href="base_map.html">base_map()</a></code> </p>
           </td>
           <td><p>Build a leaflet base map</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="point_map.html">point_map</a></code> <code><a href="point_map.html">range_map</a></code> <code><a href="point_map.html">point_range_map</a></code> <code><a href="point_map.html">heat_map</a></code> </p>
+            <p><code><a href="point_map.html">point_map()</a></code> <code><a href="point_map.html">range_map()</a></code> <code><a href="point_map.html">point_range_map()</a></code> <code><a href="point_map.html">heat_map()</a></code> </p>
           </td>
           <td><p>Build maps of animal locations</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="add_control.html">add_control</a></code> </p>
+            <p><code><a href="add_control.html">add_control()</a></code> </p>
           </td>
           <td><p>Add layer control for leaflet map</p></td>
         </tr>
@@ -249,25 +252,25 @@
         <tr>
           <!--  -->
           <td>
-            <p><code><a href="align_list.html">align_list</a></code> </p>
+            <p><code><a href="align_list.html">align_list()</a></code> </p>
           </td>
           <td><p>Combine two lists into one list by aligning each item</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="par_lapply.html">par_lapply</a></code> </p>
+            <p><code><a href="par_lapply.html">par_lapply()</a></code> </p>
           </td>
           <td><p>Parallel apply function to list in all platforms</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="par_try_models.html">par_try_models</a></code> <code><a href="par_try_models.html">par_fit_models</a></code> </p>
+            <p><code><a href="par_try_models.html">par_try_models()</a></code> <code><a href="par_try_models.html">par_fit_models()</a></code> </p>
           </td>
           <td><p>Parallel fitting models on telemetry list</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="par_occur.html">par_occur</a></code> </p>
+            <p><code><a href="par_occur.html">par_occur()</a></code> </p>
           </td>
           <td><p>Parallel calculate occurrence from telemetry and model list</p></td>
         </tr>
@@ -281,37 +284,43 @@
         <tr>
           <!--  -->
           <td>
-            <p><code><a href="assign_distance.html">assign_distance</a></code> </p>
+            <p><code><a href="assign_distance.html">assign_distance()</a></code> </p>
           </td>
           <td><p>Calculate distance to median center for each animal location</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="assign_speed.html">assign_speed</a></code> </p>
+            <p><code><a href="assign_speed.html">assign_speed()</a></code> </p>
           </td>
           <td><p>Calculate speed for each animal location</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="pick.html">pick</a></code> </p>
+            <p><code><a href="pick.html">pick()</a></code> </p>
           </td>
           <td><p>Pick subset from telemetry object/list</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="JS.logify.html">JS.logify</a></code> <code><a href="JS.logify.html">JS.onload</a></code> </p>
+            <p><code><a href="JS.logify.html">JS.logify()</a></code> <code><a href="JS.logify.html">JS.onload()</a></code> </p>
           </td>
           <td><p>JS Functions To Logify A <code>sliderInput</code></p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="zip_folder.html">zip_folder</a></code> </p>
+            <p><code><a href="multi_title.html">multi_title()</a></code> <code><a href="multi_title.html">multi_color_title()</a></code> <code><a href="multi_title.html">multi_color_multi_line_title()</a></code> </p>
+          </td>
+          <td><p>Multiple Colored Plot Title</p></td>
+        </tr><tr>
+          <!--  -->
+          <td>
+            <p><code><a href="zip_folder.html">zip_folder()</a></code> </p>
           </td>
           <td><p>Compress a folder into zip</p></td>
         </tr><tr>
           <!--  -->
           <td>
-            <p><code><a href="get_names.html">get_names</a></code> </p>
+            <p><code><a href="get_names.html">get_names()</a></code> </p>
           </td>
           <td><p>Extract vector of names from <code>data.table</code></p></td>
         </tr>
@@ -340,7 +349,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
@@ -348,3 +357,4 @@
 
   </body>
 </html>
+

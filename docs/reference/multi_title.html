@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate speed for each animal location — assign_speed • ctmmweb</title>
+<title>Multiple Colored Plot Title — multi_title • ctmmweb</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,12 +27,9 @@
 <script src="../pkgdown.js"></script>
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Calculate speed for each animal location — assign_speed" />
+<meta property="og:title" content="Multiple Colored Plot Title — multi_title" />
 
-<meta property="og:description" content="It's difficult to get a simple speed definition yet robust to all kinds of
-dirty data cases. A sophisticated method is attempt first which should cover
-most common edge cases reasonably well. When it fails for extreme situations,
-the function will fall back to simpler method which is more naive but robust." />
+<meta property="og:description" content="Make multiple colored base plot title." />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -104,61 +101,69 @@ the function will fall back to simpler method which is more naive but robust." /
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate speed for each animal location</h1>
+    <h1>Multiple Colored Plot Title</h1>
     
     </div>
 
     
-    <p>It's difficult to get a simple speed definition yet robust to all kinds of
-dirty data cases. A sophisticated method is attempt first which should cover
-most common edge cases reasonably well. When it fails for extreme situations,
-the function will fall back to simpler method which is more naive but robust.</p>
+    <p>Make multiple colored base plot title.</p>
     
 
-    <pre class="usage"><span class='fu'>assign_speed</span>(<span class='no'>animals_dt</span>, <span class='no'>tele_list</span>, <span class='kw'>device_error</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+    <pre class="usage"><span class='fu'>multi_title</span>(<span class='no'>...</span>)
+
+<span class='fu'>multi_color_title</span>(<span class='no'>color_vec</span>, <span class='no'>text_vec</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>", "</span>)
+
+<span class='fu'>multi_color_multi_line_title</span>(<span class='no'>color_vec</span>, <span class='no'>text_vec</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"\n\n"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>animals_dt</th>
-      <td><p>location <code>data.table</code> from <code><a href='combine.html'>combine()</a></code>. The original input
-<code>data.table</code> will be modified in place by reference after calculation.</p></td>
+      <th>...</th>
+      <td><p>Color and text interwoven in order. See example. Note some spaces
+need to be placed around text.</p></td>
     </tr>
     <tr>
-      <th>tele_list</th>
-      <td><p>the <code><a href='http://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> telemetry obj list. Calculation
-need error information from it.</p></td>
+      <th>color_vec</th>
+      <td><p>Vector of colors. Should have same length with <code>text_vec</code></p></td>
     </tr>
     <tr>
-      <th>device_error</th>
-      <td><p>standardized device error in meter. Example: GPS: 10,
-VHF: 100</p></td>
+      <th>text_vec</th>
+      <td><p>Vector of text segments. Will have the cooresponding color in
+<code>color_vec</code>.</p></td>
+    </tr>
+    <tr>
+      <th>sep</th>
+      <td><p>Separator to be placed among the text segments</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
-    <p>The input <code>data.table</code> with speed columns added. The name <code>assign</code>
-hint on this nature.</p>
+    <ul>
+<li><p><code>multi_title</code>: The original function taken from
+<a href='http://r.789695.n4.nabble.com/title-words-in-different-colors-td878698.html#a878700'>mailing list by Barry Rowlingson</a>.
+The only change is the <code>NULL</code> return value was made invisible.</p></li>
+<li><p><code>multi_color_title</code>: Instead of taking interwoven color and text input,
+color vector and text vector are used.</p></li>
+<li><p><code>multi_color_multi_line_title</code>: Place each text segment in a new line.</p></li>
+</ul>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>To reduce duplicate calculation, speed calculation will use some columns
-created in distance calculation. Always update <code>data.table</code> with
-<code><a href='assign_distance.html'>assign_distance()</a></code> first then use <code>assign_speed()</code>.</p>
-    
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>plot</span>(<span class='fl'>1</span>, <span class='fl'>2</span>)</div><div class='input'><span class='fu'>multi_title</span>(<span class='kw'>color</span><span class='kw'>=</span><span class='st'>"red"</span>, <span class='st'>"Traffic"</span>,
+           <span class='kw'>color</span><span class='kw'>=</span><span class='st'>"orange"</span>, <span class='st'>" light "</span>,
+           <span class='kw'>color</span><span class='kw'>=</span><span class='st'>"green"</span>, <span class='st'>"signal"</span>)</div><div class='img'><img src='multi_title-1.png' alt='' width='700' height='432.632880098887' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-          </ul>
+      <li><a href="#functions">Functions</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
