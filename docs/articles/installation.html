@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ctmmweb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
       </span>
     </div>
 
@@ -84,7 +84,7 @@
       <h1>Installation</h1>
                         <h4 class="author">Xianghui Dong</h4>
             
-            <h4 class="date">2019-02-07</h4>
+            <h4 class="date">2019-02-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ctmm-initiative/ctmmweb/blob/master/vignettes/installation.Rmd"><code>vignettes/installation.Rmd</code></a></small>
       <div class="hidden name"><code>installation.Rmd</code></div>
@@ -96,6 +96,7 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<p><em>We have a <a href="https://github.com/ctmm-initiative/ctmmweb/releases/download/v0.2.5/ctmmwebsetup.exe">windows installer</a> which will do everything below.</em></p>
 <ol style="list-style-type: decimal">
 <li>
 <p>Install R</p>
@@ -109,7 +110,7 @@
 <li>
 <p>Install app</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"ctmmweb"</span>, </a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">                 <span class="dt">repos =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">getOption</a></span>(<span class="st">"repos"</span>),</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">                 <span class="dt">repos =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"https://cloud.r-project.org/"</span>,</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3">                           <span class="st">"https://ctmm-initiative.github.io/ctmm_repo/"</span>))</a></code></pre></div>
 <p>For latest beta version:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">require</a></span>(<span class="st">"devtools"</span>)) <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"devtools"</span>)</a>

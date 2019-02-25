@@ -91,12 +91,17 @@
 <div id="install-and-run-app" class="section level2">
 <h2 class="hasAnchor">
 <a href="#install-and-run-app" class="anchor"></a>Install and run app</h2>
-<p>Just run this in R console (<a href="https://ctmm-initiative.github.io/ctmmwebdoc/articles/installation.html">More detailed instructions</a>):</p>
+<ul>
+<li>Just run this in R console (<a href="https://ctmm-initiative.github.io/ctmmwebdoc/articles/installation.html">More detailed instructions</a>):</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"ctmmweb"</span>, </a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">                 <span class="dt">repos =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">getOption</a></span>(<span class="st">"repos"</span>),</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">                 <span class="dt">repos =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"https://cloud.r-project.org/"</span>,</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3">                           <span class="st">"https://ctmm-initiative.github.io/ctmm_repo/"</span>))</a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5">ctmmweb<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ctmmweb/topics/app">app</a></span>()  </a></code></pre></div>
+<ul>
+<li>We also built <a href="https://github.com/ctmm-initiative/ctmmweb/releases/download/v0.2.5/ctmmwebsetup.exe">a windows installer</a>, which will download R installer if needed, install R and package, create shortcut for the app.</li>
+</ul>
 </div>
 <div id="run-app-from-our-website" class="section level2">
 <h2 class="hasAnchor">

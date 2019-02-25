@@ -7,6 +7,6 @@ articles:
   installation: installation.html
   package_usage: package_usage.html
 urls:
-  reference: https://ctmm-initiative.github.io/ctmmwebdoc//reference
-  article: https://ctmm-initiative.github.io/ctmmwebdoc//articles
+  reference: https://ctmm-initiative.github.io/ctmmwebdoc/reference
+  article: https://ctmm-initiative.github.io/ctmmwebdoc/articles
 
