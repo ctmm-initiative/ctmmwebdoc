@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Report data summary on telemetry object/list — report • ctmmweb</title>
+<title>Report data summary on telemetry list — report • ctmmweb</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Report data summary on telemetry object/list — report" />
+<meta property="og:title" content="Report data summary on telemetry list — report" />
 
-<meta property="og:description" content="Report data summary on telemetry object/list" />
+<meta property="og:description" content="Report data summary on telemetry list" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -116,25 +116,26 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Report data summary on telemetry object/list</h1>
+    <h1>Report data summary on telemetry list</h1>
     <small class="dont-index">Source: <a href='https://github.com/ctmm-initiative/ctmmweb/blob/master/R/1_ctmm_data.R'><code>R/1_ctmm_data.R</code></a></small>
     <div class="hidden name"><code>report.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Report data summary on telemetry object/list</p>
+    <p>Report data summary on telemetry list</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>report</span>(<span class='no'>tele_obj_list</span>)</pre>
+    <pre class="usage"><span class='fu'>report</span>(<span class='no'>tele_list</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>tele_obj_list</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> telemetry object or list</p></td>
+      <th>tele_list</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> telemetry list. Use <code><a href='as_tele_list.html'>as_tele_list()</a></code>
+over <code><a href='https://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> to ensure a proper list.</p></td>
     </tr>
     </table>
     

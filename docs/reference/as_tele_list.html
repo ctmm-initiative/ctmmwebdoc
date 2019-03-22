@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Override some ggplot2 default theme settings — BIGGER_THEME • ctmmweb</title>
+<title>Coerce telemetry object to list — as_tele_list • ctmmweb</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,13 +32,12 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Override some ggplot2 default theme settings — BIGGER_THEME" />
+<meta property="og:title" content="Coerce telemetry object to list — as_tele_list" />
 
-<meta property="og:description" content="
-ctmmweb:::BIGGER_THEME increase the default ggplot2 legend, axis size
-ctmmweb:::BIGGER_KEY increase default legend key size
-ctmmweb:::CENTER_TITLE place title in center and bold
-" />
+<meta property="og:description" content="ctmm::as.telemetry() will return will return single telemetry object
+instead of a list when there is only one animal in data. To make code
+consistent we always work with a list of telemetry objects. Use this function
+over ctmm::as.telemetry() to make sure result is a proper list." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -120,38 +119,50 @@ ctmmweb:::CENTER_TITLE place title in center and bold
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Override some ggplot2 default theme settings</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ctmm-initiative/ctmmweb/blob/master/R/2_plot.R'><code>R/2_plot.R</code></a></small>
-    <div class="hidden name"><code>ggplot_customization.Rd</code></div>
+    <h1>Coerce telemetry object to list</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ctmm-initiative/ctmmweb/blob/master/R/1_ctmm_data.R'><code>R/1_ctmm_data.R</code></a></small>
+    <div class="hidden name"><code>as_tele_list.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <ul>
-<li><p><code>ctmmweb:::BIGGER_THEME</code> increase the default ggplot2 legend, axis size</p></li>
-<li><p><code>ctmmweb:::BIGGER_KEY</code> increase default legend key size</p></li>
-<li><p><code>ctmmweb:::CENTER_TITLE</code> place title in center and bold</p></li>
-</ul>
+    <p><code><a href='https://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> will return will return single telemetry object
+instead of a list when there is only one animal in data. To make code
+consistent we always work with a list of telemetry objects. Use this function
+over <code><a href='https://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> to make sure result is a proper list.</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>BIGGER_THEME</span>
+    <pre class="usage"><span class='fu'>as_tele_list</span>(<span class='no'>tele</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>tele</th>
+      <td><p>result from <code><a href='https://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code></p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-<span class='no'>BIGGER_KEY</span>
+    <p>a list of telemetry objects, each named by animal name</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-<span class='no'>CENTER_TITLE</span></pre>
-        
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A <code>ggplot2</code> function call of <code><a href='https://www.rdocumentation.org/packages/ggplot2/topics/theme'>ggplot2::theme</a></code> or <code><a href='https://www.rdocumentation.org/packages/ggplot2/topics/guides'>ggplot2::guides</a></code></p>
+    <p>If the input is already a list, the list will be returned as is. It's safe to
+wrap the function on <code><a href='https://www.rdocumentation.org/packages/ctmm/topics/as.telemetry'>ctmm::as.telemetry()</a></code> all the time.</p>
     
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#format">Format</a></li>
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>
