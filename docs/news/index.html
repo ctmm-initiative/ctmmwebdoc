@@ -16,13 +16,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -46,6 +48,7 @@
 <![endif]-->
 
 
+
   </head>
 
   <body>
@@ -62,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ctmmweb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6.9000</span>
       </span>
     </div>
 
@@ -108,6 +111,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -117,6 +121,17 @@
       <small>Source: <a href='https://github.com/ctmm-initiative/ctmmweb/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="version-0-2-6-9000-20191111-misc-updates" class="section level2">
+<h2 class="hasAnchor">
+<a href="#version-0-2-6-9000-20191111-misc-updates" class="anchor"></a>version 0.2.6.9000, 2019/11/11, Misc Updates</h2>
+<ul>
+<li>Home range estimation now has the option to select either calculate in same grid or individually, because sometimes the spread out individuals can cause out of memory error. The selection must happen before estimation so the page will need user to manual trigger the calculation.</li>
+<li>Updated model summary code to follow changes in <code>ctmm</code> side on <code>ML</code>/<code>est</code> changes. Older version will break with the more recent <code>ctmm</code> version.</li>
+<li>Occurrence can be exported too, like home ranges.</li>
+<li>New windows installer will always install github master version by default. Thus the installer don’t need to be updated in future.</li>
+<li>Added a batch script example to calculate home range in package vigenette.</li>
+</ul>
+</div>
     <div id="version-0-2-5-20190210-misc-updates" class="section level2">
 <h2 class="hasAnchor">
 <a href="#version-0-2-5-20190210-misc-updates" class="anchor"></a>version 0.2.5, 2019/02/10, Misc Updates</h2>
@@ -139,8 +154,8 @@
 <li>Rewrite installaion instructions to make it more clear.</li>
 <li>
 <p>This is a official release with more tests done against <code>ctmm</code> 0.5.4 CRAN release. Release version can be installed from our own repo using like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"ctmmweb"</span>, </a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">                 <span class="dt">repos =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"https://cloud.r-project.org/"</span>,</a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"ctmmweb"</span>, </a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">                 <span class="dt">repos =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"https://cloud.r-project.org/"</span>,</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3">                           <span class="st">"https://ctmm-initiative.github.io/ctmm_repo/"</span>))</a></code></pre></div>
 </li>
 <li><p>We also created a windows installer to automate the installation steps.</p></li>
@@ -150,7 +165,7 @@
 <h2 class="hasAnchor">
 <a href="#version-0-2-0-20180907-telemetry-errors" class="anchor"></a>version 0.2.0, 2018/09/07, Telemetry Errors</h2>
 <ul>
-<li>Dealing with bugs, conflicts caused by <code><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">devtools::install_github</a></code>, dependency packages, alternative installation methods.</li>
+<li>Dealing with bugs, conflicts caused by <code><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">devtools::install_github</a></code>, dependency packages, alternative installation methods.</li>
 <li>Units in tables were moved to column header so the columns can be sorted properly.</li>
 <li>Capture warning/error in importing data, notify user when needed.</li>
 <li>Take a location subset by cropping.</li>
@@ -214,8 +229,8 @@
 </li>
 <li>For the version after this change, you cannot launch specific version using previous method. You can install certain version of package with</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"ctmm-initiative/ctmmweb"</span>, <span class="dt">ref =</span> <span class="st">"v0.0.9"</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">ctmmweb<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/ctmmweb/topics/app">app</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"ctmm-initiative/ctmmweb"</span>, <span class="dt">ref =</span> <span class="st">"v0.0.9"</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">ctmmweb<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ctmmweb/man/app.html">app</a></span>()</a></code></pre></div>
 </div>
     <div id="version-0-0-8-20171109-map" class="section level2">
 <h2 class="hasAnchor">
@@ -259,7 +274,7 @@
 </ul>
 <p><a href="http://www.youtube.com/watch?v=nyUe6PIVfyU">Demo of usage</a></p>
 <p>Run this version with</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/runUrl">runGitHub</a></span>(<span class="st">'ctmm-initiative/ctmmweb'</span>, <span class="dt">ref =</span> <span class="st">"v0.0.4"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">shiny<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/shiny/man/runUrl.html">runGitHub</a></span>(<span class="st">'ctmm-initiative/ctmmweb'</span>, <span class="dt">ref =</span> <span class="st">"v0.0.4"</span>)</a></code></pre></div>
 </div>
     <div id="version-0-0-2-20170228-data-exploration-plots-time-subsetting" class="section level2">
 <h2 class="hasAnchor">
@@ -268,7 +283,7 @@
 <p><a href="http://www.youtube.com/watch?v=7vRktLa76Ho">Demo of features</a></p>
 <p>Though the latter stages of modeling is not connected yet, because the modeling work flow may need some reconsideration to incorporate a flexible workflow into a linear page structure.</p>
 <p>Run this version with</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/runUrl">runGitHub</a></span>(<span class="st">'ctmm-initiative/ctmmweb'</span>, <span class="dt">ref =</span> <span class="st">"v0.0.2"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">shiny<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/shiny/man/runUrl.html">runGitHub</a></span>(<span class="st">'ctmm-initiative/ctmmweb'</span>, <span class="dt">ref =</span> <span class="st">"v0.0.2"</span>)</a></code></pre></div>
 </div>
     <div id="version-0-0-1-20170127-first-rudimental-version" class="section level2">
 <h2 class="hasAnchor">
@@ -276,8 +291,8 @@
 <p>This version is a proof of concept. Every page is very simple but the app provided a complete workflow starting from import data to the final home range estimation.</p>
 <p>Later versions will have much more sophisticated features but only work with selected pages.</p>
 <p>To run this version you need to install shinyjs (which is not required in later versions).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"shinyjs"</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/runUrl">runGitHub</a></span>(<span class="st">'ctmm-initiative/ctmmweb'</span>, <span class="dt">ref =</span> <span class="st">"v0.0.1"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"shinyjs"</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">shiny<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/shiny/man/runUrl.html">runGitHub</a></span>(<span class="st">'ctmm-initiative/ctmmweb'</span>, <span class="dt">ref =</span> <span class="st">"v0.0.1"</span>)</a></code></pre></div>
 </div>
   </div>
 
@@ -285,6 +300,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#version-0-2-6-9000-20191111-misc-updates">0.2.6.9000</a></li>
         <li><a href="#version-0-2-5-20190210-misc-updates">0.2.5</a></li>
         <li><a href="#version-0-2-0-20180907-telemetry-errors">0.2.0</a></li>
         <li><a href="#version-0-1-0-20180208-adjust-package-overlap">0.1.0</a></li>
@@ -302,19 +318,23 @@
 
 </div>
 
+
       <footer>
       <div class="copyright">
   <p>Developed by Xianghui Dong.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
